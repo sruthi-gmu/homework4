@@ -1,0 +1,187 @@
+<h2>SURVEY FORM</h2>
+  <form [formGroup]="surveyForm" (ngSubmit)="onSubmit()" autocomplete="on">
+    <div class="row">
+          <div class="col-25">
+            <label for="id">Student ID</label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" formControlName="id" id="id" (focus)= "onFocusMethod()"(blur) ="onBlur()" name="id" required/>
+        </div>
+        <div class="error-msg" id="error-msg" *ngIf="showiderror">Please enter valid id</div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+          <label for="name">First Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" class="form-control" formControlName="firstName" id="firstName" (focus)= "onFocusMethod()"(blur) ="onBlur()" name="firstName" required/>
+        </div>
+        <div class="error-msg" id="error-msg" *ngIf="showfistNameerror">Please enter valid first name</div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="lastName">Last Name</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control" formControlName="lastName" id="lastName"(focus)= "onFocusMethod()"(blur) ="onBlur()" name="lastName" required/>
+          </div>
+          <div class="error-msg" id="error-msg" *ngIf="showlastNameerror">Please enter valid last name</div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="address">address</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control" formControlName="address" id="address" (focus)= "onFocusMethod()"(blur) ="onBlur()" name="address" required/>
+          </div>
+          <div class="error-msg" id="error-msg" *ngIf="showaddresserror">Please enter valid address</div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="city">city</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control"formControlName="city" id="city" (focus)= "onFocusMethod()"(blur) ="onBlur()"  name="city" required/>
+          </div>
+          <div class="error-msg" id="error-msg" *ngIf="showcityerror">Please enter valid city</div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="state">state</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control" formControlName="state"id="state" (focus)= "onFocusMethod()"(blur) ="onBlur()" name="state" required/>
+          </div>
+          <div class="error-msg" id="error-msg" *ngIf="showstateerror">Please enter valid state</div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="zip">zip</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control"formControlName="zip"  id="zip" (focus)= "onFocusMethod()"(blur) ="onBlur()" name="zip" required/>
+          </div>
+          <div class="error-msg" id="error-msg" *ngIf="showziperror">Please enter valid zip</div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="tel">telephone number</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control" formControlName="tel" id="tel" (focus)= "onFocusMethod()"(blur) ="onBlur()" name="tel" required/>
+          </div>
+          <div class="error-msg" id="error-msg" *ngIf="showtelerror">Please enter valid telephone number</div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="emailId">emailId</label>
+          </div>
+        <div class="col-75">
+            <input type="email" class="form-control" formControlName="emailId" id="emailId" (focus)= "onFocusMethod()"(blur) ="onBlur()"  name="emailId" required/>
+          </div>
+          <div class="error-msg" id="error-msg" *ngIf="showemailIderror">Please enter valid email id</div>
+   </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="sdate">Submission date</label>
+        </div>
+        <div class="col-75">
+            <input type="date" class="form-control" formControlName="sdate" id="sdate" (focus)= "onFocusMethod()"(blur) ="onBlur()" name="sdate" required/>
+        </div>
+        <div class="error-msg" id="error-msg" *ngIf="showsdateerror">Please enter valid date</div>
+
+    </div>
+ 
+      <div class="mb-3">
+        <label>Things You Liked about this university</label>
+        
+        <div class="form-check">
+        <input class="form-control" type="checkbox" formControlName="thingsliked" name="thingsliked"
+       value="student" id="defaultCheck1" (change)="onCheckboxChange($event, 'Students')" required/>
+        <label class="form-check-label">Students </label>
+        </div>
+
+
+        <div class="form-check">
+        <input class="form-control" type="checkbox" formControlName="thingsliked"  name="thingsliked"
+       value="location" id="defaultCheck1" (change)="onCheckboxChange($event, 'Location')" required/>
+       <label class="form-check-label">Location
+        </label>
+        </div>
+
+        <div class="form-check">
+        <input class="form-control" type="checkbox" formControlName="thingsliked"  name="thingsliked"
+       value="campus" id="defaultCheck1" (change)="onCheckboxChange($event, 'Campus')"required/>
+        <label class="form-check-label">Campus</label>
+        </div>
+
+        <div class="form-check">
+        <input class="form-control" type="checkbox" formControlName="thingsliked" name="thingsliked"
+       value="atmosphere "id="defaultCheck1" (change)="onCheckboxChange($event, 'Atmosphere')"required/>
+        <label class="form-check-label">Atmosphere</label>
+        </div>
+
+        <div class="form-check">
+        <input class="form-control" type="checkbox" formControlName="thingsliked" name="thingsliked" value="dorm room" id="defaultCheck1" 
+        (change)="onCheckboxChange($event, 'Dorm Rooms')"required/>
+        <label class="form-check-label">Dorm Rooms</label>
+        </div>
+
+        <div class="form-check">
+        <input class="form-control" type="checkbox" formControlName="thingsliked" (focus)= "onFocusMethod()"(blur) ="onBlur()" name="thingsliked"
+       value="sports" id="defaultCheck1" (change)="onCheckboxChange($event, 'Sports')"required/>
+        <label class="form-check-label">Sports</label>
+        </div>
+        <div class="error-msg" id="error-msg" *ngIf="showthingsLikederror">Please select the checkbox</div>
+
+        </div>
+
+    <div class="mb-3">
+        <label>How did you become interest in this university</label>
+        <div class="radio">
+        <label><input type="radio" id="interest" name="interest" value="Friends" >Friends</label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" id="interest" name="interest" value="Television" >Television</label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" id="interest" name="interest" value="Internet" >Internet</label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" id="interest" name="interest" value="Other" >Other</label>
+        </div>
+        <div class="error-msg" id="error-msg" *ngIf="showinterestderror">Please select your interest</div>
+
+    </div>
+    
+    <div class="row">
+    <label for="month">likelihood of recommendation</label>
+    <select class="form-control" id="recommend" name ="recommend" >
+    <option value="Very Likely">Very Likely</option>
+    <option value="Likely">Likely</option>
+    <option value="Unlikely">Unlikely</option>
+     </select>
+     <div class="error-msg" id="error-msg" *ngIf="showrecommenderror">Please select from the dropdown</div>
+
+    </div>
+     
+    <div class="row">
+        <input type="submit" value="Submit"> <span> .. </span>
+        <input type="button" value="Cancel">
+    </div>
+</form>
